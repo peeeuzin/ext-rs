@@ -4,11 +4,9 @@
 [![License](https://img.shields.io/badge/license-MIT,_i_guess-orange)](LICENSE)
 [![Build Status](https://img.shields.io/badge/build-surprisingly_passing-green)](.)
 
-## ⚠️ **DO NOT USE THIS IN PRODUCTION** ⚠️
+## ⚠️ **USE THIS IN PRODUCTION!!** ⚠️
 
-This is a **joke crate**. It's what happens when you doesn't have a job.
-
-If you use this in production code, your pull request will be rejected, your colleagues will judge you, and rightfully so.
+If you want to experience the thrill of living on the edge, go ahead and use this crate in your production code. Your pull requests will be celebrated, your colleagues will admire your daring spirit. Sincerely, I don't know what could possibly go wrong if you put this in production.
 
 ---
 
@@ -39,7 +37,7 @@ ext-rs = "0.1.0"
 
 ```rust
 use std::io::BufReader;
-use extract_rs::*;
+use ext_rs::*;
 
 let data = b"42 Hello 3.14";
 let mut reader = ExtReader(BufReader::new(&data[..]));
@@ -64,10 +62,10 @@ assert_eq!(float_value, 3.14);
 If you want to parse stdin directly:
 
 ```rust
-use std::io::BufReader;
-use extract_rs::*;
+use std::io::{stdin, BufReader};
+use ext_rs::*;
 
-let stdin = std::io::stdin();
+let stdin = stdin();
 let mut reader = ExtReader(BufReader::new(stdin.lock()));
 
 let mut int_value: i32 = 0;
@@ -81,7 +79,7 @@ reader >> &mut int_value;
 - ✅ **No error handling**: Because who needs that? Unwrap all the things!
 - ✅ **Operator abuse**: Who cares about Rust's design principles?
 - ✅ **Bad performance**: Efficiency is overrated
-- ✅ **Unwrap everywhere**: Because `.unwrap()` never caused any problems, RIP Cloudflare
+- ✅ **Unwrap everywhere**: Because `.unwrap()` never caused any problems, Cloudflare doesn't know how to code though.
 
 ## Why This Exists
 
