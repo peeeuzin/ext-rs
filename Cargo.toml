@@ -2,5 +2,7 @@
 name = "ext-rs"
 version = "0.1.0"
 edition = "2024"
+description = "A Rust crate that brings C++-style extensions to Rust. Because why not?"
+license = "MIT"
 
 [dependencies]
